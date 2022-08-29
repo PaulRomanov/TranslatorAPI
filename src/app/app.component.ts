@@ -1,6 +1,7 @@
 import { environment } from './../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { TranslationService } from './translation.service';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +14,17 @@ export class AppComponent {
   inputText = '';
   transalatedText = '';
 
-constructor(private http: HttpClient) {
+constructor(private translationService: TranslationService) {
   
 }
 
-translate() {
-  this.http.post("https://translation.googleapis.com/language/translate/v2?key="+environment.apiKey, 
-  {
+translate(){
+  let model={
     "q": [this.inputText],
     "target": this.targetLanguage
-  }).subscribe((response:any)=>{
-    this.transalatedText=response.data.translation[0].transalatedText
+  };
+   this.translationService.translate(model).subscribe((response:any)=>{
+    this.transalatedText=response.data.translations[0].translatedText
   })
 }
 
