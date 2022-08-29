@@ -3,13 +3,13 @@
     <div class="col-5">
       <div class="form-group">
         <label for="input-text">Input Text</label>
-        <textarea  class="form-control" id="input-text" name="input-text"></textarea>
+        <textarea  class="form-control" id="input-text" name="input-text" [(ngModel)]="inputText"></textarea>
       </div>
     </div>
     <div class="col-2">
       <div class="form-group">
         <label for="select-language">Choose language</label>
-        <select>
+        <select id="select-language" name="select-language" (change)="translate()" [(ngModel)]="targetLanguage">
           <option value="en">English</option>
           <option value="ru">Russian</option>
           <option value="es">Spanish</option>
@@ -19,7 +19,7 @@
     <div class="col-5">
       <div class="form-group">
         <label for="translated-text">Translated Text</label>
-        <textarea class="form-control" id="translated-text" name="translated-text"></textarea>
+        <textarea class="form-control" id="translated-text" name="translated-text" [(ngModel)]="transalatedText"></textarea>
       </div>
     </div>
   </div>
