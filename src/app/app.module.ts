@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerModule } from './components/spinner/spinner.module';
 
 
@@ -21,9 +20,8 @@ import { SpinnerModule } from './components/spinner/spinner.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
-    // MatProgressSpinnerModule, 
-    // BrowserAnimationsModule,
+    MatProgressSpinnerModule, 
+    BrowserAnimationsModule,
     SpinnerModule
   ],
   providers: [],
