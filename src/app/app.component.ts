@@ -43,4 +43,9 @@ export class AppComponent {
     }, 1500);
   }
 
+  public clearTextArea(): void {
+    this.inputText = '';
+    this.transalatedText = '';
+  }
+
 }
