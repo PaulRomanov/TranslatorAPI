@@ -1,0 +1,53 @@
+<app-header></app-header>
+<form>
+  <div class="row">
+    <div class="col-5">
+      <div class="form-group">
+        <label for="input-text">Input Text</label>
+      <div class="disablet-div" *ngIf="!targetLanguage"></div>
+        <textarea
+          class="form-control"
+          id="input-text"
+          name="input-text"
+          (change)="translate()"
+          [(ngModel)]="inputText"
+        ></textarea>
+      </div>
+    </div>
+    <div class="wrapper-block">
+      <div class="col-2">
+        <div class="form-group">
+          <label for="select-language">Choose language</label>
+          <select
+            id="select-language"
+            name="select-language"
+            [(ngModel)]="targetLanguage"
+          >
+            <option value="en">English</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="ja">Japanese</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="floating-button" (click)="clearTextArea()">Clear</div>
+    </div>
+    <div class="col-5">
+      <div class="form-group">
+        <div class="wrapper-spiner">
+          <mat-spinner *ngIf="isSpinnerTranslate"></mat-spinner>
+        </div>
+        <label for="translated-text">Translated Text</label>
+        <textarea
+          class="form-control"
+          id="translated-text"
+          name="translated-text"
+          [(ngModel)]="transalatedText"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+</form>
+<app-spinner *ngIf="isSpinner"></app-spinner>
