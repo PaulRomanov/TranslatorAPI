@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { SwitchThemeService } from 'src/app/services/switchTheme.service';
 import { TranslationService } from 'src/app/services/translation.service';
+
 
 @Component({
   selector: 'app-mainPage',
   templateUrl: './mainPage.component.html',
-  styleUrls: ['./mainPage.component.scss']
+  styleUrls: ['./mainPage.component.scss', '../header/header.component.scss']
 })
 export class MainPageComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class MainPageComponent implements OnInit {
   public isSpinner: boolean = true;
   public isSpinnerTranslate: boolean = false;
 
-  constructor(private translationService: TranslationService) { }
+  constructor(private translationService: TranslationService, public switchThemeService: SwitchThemeService) { }
 
   ngOnInit(): void {
     this.showSpinner()
